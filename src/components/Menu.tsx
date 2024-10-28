@@ -117,10 +117,10 @@ const menuItems = [
 
 const Menu = () => {
   return (
-    <div className="">
+    <div className="mt-4 text-sm">
       {menuItems.map((i) => (
-        <div className="menu-item" key={i.title}>
-          <span>{i.title}</span>
+        <div className="flex flex-col gap-2" key={i.title}>
+          <span className="">{i.title}</span>
           {i.items.map((item) => (
             <Link href={item.href} key={item.label}>
               <Image src={item.icon} alt="" width={20} height={20} />
