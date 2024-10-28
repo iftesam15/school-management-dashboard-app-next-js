@@ -13,6 +13,14 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        dhruboSky: "#C3EBFA",
+        dhruboSkyLIght: "#EDF9FD",
+        dhruboPurple: "#CFCEFF",
+        dhruboPurpleLight: "#F1F0FF",
+        dhruboYellow: "#FAE27C",
+        dhruboYellowLight: "#FEFCE8",
+      },
     },
   },
   plugins: [],
