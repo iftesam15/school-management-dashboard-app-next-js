@@ -13,72 +13,72 @@ import {
 import Image from "next/image";
 const data = [
   {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
+    name: "Mon",
+    present: 60,
+    absent: 40,
   },
   {
-    name: "Page B",
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
+    name: "Tue",
+    present: 70,
+    absent: 30,
   },
   {
-    name: "Page C",
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
+    name: "Wed",
+    present: 75,
+    absent: 25,
   },
   {
-    name: "Page D",
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
+    name: "Thu",
+    present: 33,
+    absent: 67,
   },
   {
-    name: "Page E",
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: "Page F",
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: "Page G",
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
+    name: "Fri",
+    present: 39,
+    absent: 61,
   },
 ];
 const AttendanceChart = () => {
   return (
     <div className="w-full h-full bg-white rounded-xl p-4">
       <div className="flex justify-between items-center">
-        <h1 className="text-lg font-semibold">Students</h1>
+        <h1 className="text-lg font-semibold">Attendance</h1>
         <Image src="/moreDark.png" alt="" width={20} height={20} />
       </div>
-      <div className="w-full h-[80%]">
+      <div className="w-full h-[90%]">
         <ResponsiveContainer>
-          <BarChart data={data}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
+          <BarChart data={data} barSize={20}>
+            <CartesianGrid
+              strokeDasharray="3 3"
+              vertical={false}
+              stroke="#ddd"
+            />
+            <XAxis
+              dataKey="name"
+              axisLine={false}
+              tick={{ fill: "#d1d5db" }}
+              tickLine={false}
+            />
             <YAxis />
-            <Tooltip />
-            <Legend />
-            <Bar
-              dataKey="pv"
-              fill="#8884d8"
-              activeBar={<Rectangle fill="pink" stroke="blue" />}
+            <Tooltip
+              contentStyle={{ borderRadius: "10px", borderColor: "lightgray" }}
+            />
+            <Legend
+              align="left"
+              verticalAlign="top"
+              wrapperStyle={{ paddingTop: "20px", paddingBottom: "40px" }}
             />
             <Bar
-              dataKey="uv"
-              fill="#82ca9d"
-              activeBar={<Rectangle fill="gold" stroke="purple" />}
+              dataKey="present"
+              fill="#FAE27C"
+              legendType="circle"
+              radius={[10, 10, 0, 0]}
+            />
+            <Bar
+              dataKey="absent"
+              fill="#C3EBFA"
+              legendType="circle"
+              radius={[10, 10, 0, 0]}
             />
           </BarChart>
         </ResponsiveContainer>
