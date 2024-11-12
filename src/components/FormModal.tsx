@@ -19,7 +19,7 @@ import StudentForm from "./forms/StudentForm";
 const forms: {
   [key: string]: (type: "create" | "update", data?: any) => JSX.Element;
 } = {
-  teacher: (type, data) => <TeacherForm />,
+  teacher: (type, data) => <TeacherForm type={"create"} />,
   student: (type, data) => <StudentForm />,
 };
 
