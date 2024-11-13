@@ -27,7 +27,26 @@ const SingleTeacherPage = () => {
             <div className="w-2/3 flex flex-col justify-between gap-4">
               <div className="flex items-center gap-4">
                 <h1 className="text-xl font-semibold">Leonard Snyder</h1>
-                {role === "admin" && <FormModal />}
+                {role === "admin" && (
+                  <FormModal
+                    table="teacher"
+                    type="update"
+                    data={{
+                      id: 1,
+                      username: "deanguerrero",
+                      email: "deanguerrero@gmail.com",
+                      password: "password",
+                      firstName: "Dean",
+                      lastName: "Guerrero",
+                      phone: "+1 234 567 89",
+                      address: "1234 Main St, Anytown, USA",
+                      bloodType: "A+",
+                      dateOfBirth: "2000-01-01",
+                      sex: "male",
+                      img: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=1200",
+                    }}
+                  />
+                )}
               </div>
               <p className="text-sm text-gray-500">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -123,19 +142,19 @@ const SingleTeacherPage = () => {
         <div className="bg-white p-4 rounded-md">
           <h1 className="text-xl font-semibold">Shortcuts</h1>
           <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
-            <Link className="p-3 rounded-md bg-dhruboSkyLIght" href="/">
+            <Link className="p-3 rounded-md bg-lamaSkyLight" href="/">
               Teacher&apos;s Classes
             </Link>
             <Link className="p-3 rounded-md bg-dhruboPurpleLight" href="/">
               Teacher&apos;s Students
             </Link>
-            <Link className="p-3 rounded-md bg-dhruboYellowLight" href="/">
+            <Link className="p-3 rounded-md bg-lamaYellowLight" href="/">
               Teacher&apos;s Lessons
             </Link>
             <Link className="p-3 rounded-md bg-pink-50" href="/">
               Teacher&apos;s Exams
             </Link>
-            <Link className="p-3 rounded-md bg-dhruboSkyLIght" href="/">
+            <Link className="p-3 rounded-md bg-lamaSkyLight" href="/">
               Teacher&apos;s Assignments
             </Link>
           </div>
