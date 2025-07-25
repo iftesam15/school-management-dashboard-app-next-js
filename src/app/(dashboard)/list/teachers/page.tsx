@@ -99,6 +99,8 @@ const TeacherListPage = async ({
   const p = page ? parseInt(page) : 1;
   const query: Prisma.TeacherWhereInput = {};
 
+  console.log(searchParams);
+
   if (queryParams) {
     for (const [key, value] of Object.entries(queryParams)) {
       if (value !== undefined) {
@@ -133,7 +135,7 @@ const TeacherListPage = async ({
     prisma.teacher.count({ where: query }),
   ]);
 
-  console.log(teachers);
+  // console.log(teachers);
   return (
     <div className="bg-white p-4 rounded-md  m-4 mt-0 h-full">
       {/* TOP */}
